@@ -143,10 +143,10 @@ void Task_Sensor(void *p_arg)
 		delay_init();
 		while(1)
 		{
-			printf("进入传感器采集任务\n\n");
+			printf("系统进入传感器采集任务\n\n");
 			Sensor_get();
 			OSTimeDlyHMSM(0, 0,0,200);
-			printf("退出传感器采集任务\n\n");			
+			printf("系统退出传感器采集任务\n\n");			
 		}
 }
 
