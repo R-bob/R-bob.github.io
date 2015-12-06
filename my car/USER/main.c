@@ -3,7 +3,7 @@
  * 描述    ：建立3个任务，每个任务控制一个LED，以固定的频率轮流闪烁（频率可调）。         
  * 实验平台：野火STM32开发板
  * 库版本  ：ST3.0.0
- *
+ *     
  * 作者    ：fire  QQ: 313303034 
  * 博客    ：firestm32.blog.chinaunix.net
 **********************************************************************************/	
@@ -15,7 +15,7 @@ OS_STK startup_task_stk[STARTUP_TASK_STK_SIZE];		  //定义栈
   
 int main(void)
 {
-  BSP_Init(); //df
+  BSP_Init(); 
 	OSInit();
 	printf("*************系统初始化完成*****************\n\n");
 	OSTaskCreate(Task_Start,(void *)0, //第二个是*Pdata                                  //Task Start为任务指针   *Pdata是当任务开始执行时传递给任务的参数的指针   

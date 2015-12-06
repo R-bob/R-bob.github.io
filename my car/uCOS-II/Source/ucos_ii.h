@@ -391,7 +391,7 @@ typedef struct os_event {
     void    *OSEventPtr;                     /* Pointer to message or queue structure                   */
     INT16U   OSEventCnt;                     /* Semaphore Count (not used if other EVENT type)          */
 #if OS_LOWEST_PRIO <= 63
-    INT8U    OSEventGrp;                     /* Group corresponding to tasks waiting for event to occur */
+    INT8U    OSEventGrp;                     /* Group corresponding·ûºÏ to tasks waiting for event to occur */
     INT8U    OSEventTbl[OS_EVENT_TBL_SIZE];  /* List of tasks waiting for event to occur                */
 #else
     INT16U   OSEventGrp;                     /* Group corresponding to tasks waiting for event to occur */
