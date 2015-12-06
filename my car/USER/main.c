@@ -15,7 +15,7 @@ OS_STK startup_task_stk[STARTUP_TASK_STK_SIZE];		  //定义栈
   
 int main(void)
 {
-  BSP_Init(); 
+  BSP_Init(); //df
 	OSInit();
 	printf("*************系统初始化完成*****************\n\n");
 	OSTaskCreate(Task_Start,(void *)0, //第二个是*Pdata                                  //Task Start为任务指针   *Pdata是当任务开始执行时传递给任务的参数的指针   
