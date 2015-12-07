@@ -572,11 +572,12 @@ ARM Macro Assembler    Page 9
               00000000 
               00000000 
               00000000 
-Command Line: --debug --xref --cpu=Cortex-M3 --apcs=interwork --depend=..\Outpu
-t\startup_stm32f10x_hd.d -o..\Output\startup_stm32f10x_hd.o -I"D:\my program\MD
-K453\ARM\RV31\Inc" -I"D:\my program\MDK453\ARM\CMSIS\Include" -I"D:\my program\
-MDK453\ARM\Inc\ST\STM32F10x" --predefine="__MICROLIB SETA 1" --list=..\Listing\
-startup_stm32f10x_hd.lst ..\CMSIS\startup\startup_stm32f10x_hd.s
+Command Line: --debug --xref --cpu=Cortex-M3 --apcs=interwork --depend=..\outpu
+t\startup_stm32f10x_hd.d -o..\output\startup_stm32f10x_hd.o -I"D:\my program\ke
+il\ARM\RV31\INC" -I"D:\my program\keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include"
+ -I"D:\my program\keil\ARM\Inc\ST\STM32F10x" --predefine="__MICROLIB SETA 1" --
+list=..\listing\startup_stm32f10x_hd.lst ..\CMSIS\startup\startup_stm32f10x_hd.
+s
 
 
 

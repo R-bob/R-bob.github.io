@@ -348,7 +348,7 @@
               <MiscControls></MiscControls>
               <Define>USE_STDPERIPH_DRIVER, STM32F10X_HD</Define>
               <Undefine></Undefine>
-              <IncludePath>..\CMSIS;..\FWlib\inc;..\USER;..\APP;..\BSP;..\uCOS-II\Ports;..\uCOS-II\Source;..\BSP\ultraeaves;..\BSP\OLED;..\BSP\Sensor;..\BSP\Key</IncludePath>
+              <IncludePath>..\CMSIS;..\FWlib\inc;..\USER;..\APP;..\BSP;..\uCOS-II\Ports;..\uCOS-II\Source;..\BSP\ultraeaves;..\BSP\OLED;..\BSP\Sensor;..\BSP\Key;..\BSP\pwm</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -502,6 +502,11 @@
               <FileName>key.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\BSP\Key\key.c</FilePath>
+            </File>
+            <File>
+              <FileName>PWM.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\BSP\pwm\PWM.c</FilePath>
             </File>
           </Files>
         </Group>
