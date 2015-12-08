@@ -7,12 +7,12 @@
 #define	TASK_LED2_PRIO					10
 #define	TASK_LED3_PRIO					12 
 #define	TASK_LED1_PRIO					11
-#define	TASK_ultrawaves_PRIO		6
-#define TASK_OLED_PRIO     		  8
-#define  TASK_Sensor_PRIO  		  7
-#define TASK_key_PRIO     		  5
-#define TASK_TIM_PRIO    				9 
-#define TASK_PWM_PRIO           13
+#define	TASK_ultrawaves_PRIO		6      //超声波优先级
+#define TASK_OLED_PRIO     		  8			 //OLED优先级
+#define  TASK_Sensor_PRIO  		  7      //传感器
+#define TASK_key_PRIO     		  5       //按键
+#define TASK_TIM_PRIO    				9       //定时器（计时用）
+#define TASK_PWM_PRIO           13      //PWM输出
 
 
 

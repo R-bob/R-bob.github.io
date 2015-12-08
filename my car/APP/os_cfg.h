@@ -33,9 +33,9 @@
 #define OS_DEBUG_EN               0    /* Enable(1) debug variables                                    */
 #define OS_EVENT_MULTI_EN         0    /* Include code for OSEventPendMulti()                          */
 
-#define OS_EVENT_NAME_SIZE       16    /* Determine»∑∂® the size of the name of a Sem, Mutex, Mbox or Q    */
+#define OS_EVENT_NAME_SIZE       16    /* Determine the size of the name of a Sem, Mutex, Mbox or Q    */
 
-#define OS_LOWEST_PRIO           31    /* Defines the lowest priority that can be assigned∑÷≈‰ ...         */
+#define OS_LOWEST_PRIO           31    /* Defines the lowest priority that can be assigned ...         */
                                        /* ... MUST NEVER be higher than 254!                           */
 
 #define OS_MAX_EVENTS            10    /* Max. number of event control blocks in your application      */

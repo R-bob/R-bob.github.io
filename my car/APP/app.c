@@ -15,6 +15,10 @@ OS_STK task_PWM_stk[TASK_PWM_STK_SIZE];
 
 
 
+OS_EVENT *sem;
+INT8U error;
+
+
 void Task_Start(void *p_arg)
 {
     (void)p_arg;                				// 'p_arg' 并没有用到，防止编译器提示警告
@@ -57,16 +61,18 @@ void Task_Start(void *p_arg)
 
 void Task_LED1(void *p_arg)
 {
-	    (void)p_arg;                	
+	    (void)p_arg;
 	SysTick_init();
 	    while (1)
     {
+			
 			printf("进入led1任务\n\n");
-        LED1( ON );
-        OSTimeDlyHMSM(0, 0,0,500);
-        LED1( OFF);
-		OSTimeDlyHMSM(0, 0,0,500);	
+      LED1( ON );
+      OSTimeDlyHMSM(0, 0,0,500);
+      LED1( OFF);
+			
 			printf("退出led1任务\n\n");
+			
     }
 }
 
@@ -80,12 +86,11 @@ void Task_LED2(void *p_arg)
 	SysTick_init();
 	
     while (1)
-    {
+    {			
 			printf("进入led2任务\n\n");
-			  LED2( ON );
-        OSTimeDlyHMSM(0, 0,0,999);
-        LED2( OFF);
-		OSTimeDlyHMSM(0, 0,0,999);	
+			LED2( ON );
+      OSTimeDlyHMSM(0, 0,0,999);
+      LED2( OFF); 
 			printf("退出led2任务\n\n");
     }
 }
@@ -98,9 +103,9 @@ void Task_LED3(void *p_arg)
 	
     while (1)
     {
-			   printf("进入led3任务\n\n");
+			  printf("进入led3任务\n\n");
         LED3( ON );
-         OSTimeDlyHMSM(0, 0,0,300);
+        OSTimeDlyHMSM(0, 0,0,300);
         LED3( OFF);
 				OSTimeDlyHMSM(0, 0,0,300);    
 				printf("退出led2任务\n\n");			
@@ -115,9 +120,11 @@ void Task_ultrawaves(void *p_arg)
 		SysTick_init();
 		for(;;)
 	{
+		OSSemPend( sem, 0, &error ); 
 		printf("进入超声波任务\n\n");
 	  UltrasonicWave_get();
-		OSTimeDlyHMSM(0,0,0,400);
+		OSTimeDlyHMSM(0,0,0,50);
+		OSSemPost( sem );
 		printf("退出超声波任务\n\n");			
 	}
 }
@@ -129,9 +136,10 @@ void Task_OLED(void *p_arg)
 		SysTick_init();
 		while(1)
 		{
+			OSSemPend( sem, 0, &error ); 
 			printf("进入OLED任务\n\n");
-			//LCD_Print(0,0,"     welcome"); 
 			OSTimeDlyHMSM(0, 0,0,50);
+			OSSemPost( sem );
 			printf("退出OLED任务\n\n");			
 		}
 }
@@ -143,10 +151,12 @@ void Task_Sensor(void *p_arg)
 		delay_init();
 		while(1)
 		{
-			printf("系统进入传感器采集任务");
+			OSSemPend( sem, 0, &error ); 
+			printf("进入传感器采集任务\n\n");
 			Sensor_get();
 			OSTimeDlyHMSM(0, 0,0,200);
-			printf("系统退出传感器采集任务");			
+			printf("退出传感器采集任务\n\n");		
+			OSSemPost( sem );			
 		}
 }
 
@@ -169,9 +179,12 @@ void Task_PWM(void *p_arg)
 		SysTick_init();
 		while(1)
 		{
+			OSSemPend( sem, 0, &error ); 
 			printf("进入PWM输出任务\n\n");
-			OSTimeDlyHMSM(0, 0,1,500);
-			printf("退出PWM输出任务\n\n");			
+			PWM_output(0, 70, 0,70);
+			OSTimeDlyHMSM(0, 0,0,200);
+			printf("退出PWM输出任务\n\n");	
+			OSSemPost( sem );			
 		}
 }
 

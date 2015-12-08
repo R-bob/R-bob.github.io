@@ -93,25 +93,25 @@ INT16U  OSSemAccept (OS_EVENT *pevent)
 
 OS_EVENT  *OSSemCreate (INT16U cnt)
 {
-    OS_EVENT  *pevent;                                     //创建一个事件结构体指针
+    OS_EVENT  *pevent;
 #if OS_CRITICAL_METHOD == 3                                /* Allocate storage for CPU status register */
     OS_CPU_SR  cpu_sr = 0;
 #endif
 
 
 
-    if (OSIntNesting > 0) {                                /* See if called from ISR ...  中断嵌套等级  */
+    if (OSIntNesting > 0) {                                /* See if called from ISR ...               */
         return ((OS_EVENT *)0);                            /* ... can't CREATE from an ISR             */
     }
-    OS_ENTER_CRITICAL();                                   //进入临界中断
+    OS_ENTER_CRITICAL();
     pevent = OSEventFreeList;                              /* Get next free event control block        */
     if (OSEventFreeList != (OS_EVENT *)0) {                /* See if pool of free ECB pool was empty   */
         OSEventFreeList = (OS_EVENT *)OSEventFreeList->OSEventPtr;
     }
-    OS_EXIT_CRITICAL();																			//退出临界中断
+    OS_EXIT_CRITICAL();
     if (pevent != (OS_EVENT *)0) {                         /* Get an event control block               */
         pevent->OSEventType    = OS_EVENT_TYPE_SEM;
-        pevent->OSEventCnt     = cnt;                      /* Set semaphore value 信号标               */
+        pevent->OSEventCnt     = cnt;                      /* Set semaphore value                      */
         pevent->OSEventPtr     = (void *)0;                /* Unlink from ECB free list                */
 #if OS_EVENT_NAME_SIZE > 1
         pevent->OSEventName[0] = '?';                      /* Unknown name                             */

@@ -11,14 +11,14 @@ void BSP_Init(void)
 {
 		SystemInit();		/* 配置系统时钟为72M */	
 		LED_GPIO_Config();  /* LED 端口初始化 */
-		TIM2_Config();     //定时器端口初始化
-		UltrasonicWave_Config();  /*超声波端口初始化*/
-		USART1_CONFIG();   //串口配置初始化
-		OLED_Config();       //初始化OLED函数
-		sensor_Config();
-		EXTI_PA0_Config();
-		
-	  printf("初始化成功!!!!\n");TIM3_Pwm_Init();
+ 		TIM2_Config();     //定时器端口初始化
+ 		UltrasonicWave_Config();  /*超声波端口初始化*/
+ 		USART1_CONFIG();   //串口配置初始化
+ 		OLED_Config();       //初始化OLED函数
+ 		sensor_Config();
+ 		EXTI_PA0_Config();
+		TIM3_Pwm_Init();
+	  printf("初始化成功!!!!\n");
 	  
 }
 
