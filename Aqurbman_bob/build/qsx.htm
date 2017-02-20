@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\build\qsx.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\build\qsx.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060300: Last Updated: Mon Feb 20 11:34:33 2017
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060300: Last Updated: Mon Feb 20 15:40:22 2017
 <BR><P>
 <H3>Maximum Stack Usage =        504 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -186,8 +186,6 @@ Global Symbols
 <LI><a href="#[fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SysTick_CLKSourceConfig
 <LI><a href="#[f1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RCC_APB1PeriphClockCmd
 <LI><a href="#[f8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NVIC_Init
-<LI><a href="#[22a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_ClearFlag
-<LI><a href="#[229]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_GetFlagStatus
 <LI><a href="#[228]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_DMACmd
 <LI><a href="#[227]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_IrDACmd
 <LI><a href="#[226]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_IrDAConfig
@@ -372,6 +370,8 @@ Global Symbols
 <LI><a href="#[16f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ADC_GetConversionValue
 <LI><a href="#[16a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ADC_CommonInit
 <LI><a href="#[16b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ADC_Cmd
+<LI><a href="#[22a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_ClearFlag
+<LI><a href="#[229]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_GetFlagStatus
 </UL>
 
 <P><STRONG><a name="[5d]"></a>main</STRONG> (Thumb, 22 bytes, Stack size 0 bytes, main.o(.text))
@@ -462,7 +462,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Duty_Loop
 </UL>
 
-<P><STRONG><a name="[77]"></a>Duty_5ms</STRONG> (Thumb, 274 bytes, Stack size 16 bytes, scheduler.o(.text))
+<P><STRONG><a name="[77]"></a>Duty_5ms</STRONG> (Thumb, 268 bytes, Stack size 16 bytes, scheduler.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 296<LI>Call Chain = Duty_5ms &rArr; IMUupdate &rArr; __hardfp_asin &rArr; __kernel_poly &rArr; __aeabi_dmul &rArr; _double_epilogue &rArr; _double_round
 </UL>
 <BR>[Calls]<UL><LI><a href="#[7b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Moving_Median
@@ -890,7 +890,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[70]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ANO_DT_Data_Exchange
 </UL>
 
-<P><STRONG><a name="[70]"></a>ANO_DT_Data_Exchange</STRONG> (Thumb, 1324 bytes, Stack size 32 bytes, data_transfer.o(.text))
+<P><STRONG><a name="[70]"></a>ANO_DT_Data_Exchange</STRONG> (Thumb, 1336 bytes, Stack size 32 bytes, data_transfer.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 160<LI>Call Chain = ANO_DT_Data_Exchange &rArr; ANO_DT_Send_PID &rArr; ANO_DT_Send_Data &rArr; Usart2_Send &rArr; USART_ITConfig
 </UL>
 <BR>[Calls]<UL><LI><a href="#[d9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Usb_Hid_Send
@@ -909,7 +909,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[6d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Duty_1ms
 </UL>
 
-<P><STRONG><a name="[db]"></a>ANO_DT_Data_Receive_Anl</STRONG> (Thumb, 4276 bytes, Stack size 40 bytes, data_transfer.o(.text))
+<P><STRONG><a name="[db]"></a>ANO_DT_Data_Receive_Anl</STRONG> (Thumb, 4284 bytes, Stack size 40 bytes, data_transfer.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 432<LI>Call Chain = ANO_DT_Data_Receive_Anl &rArr; Para_ResetToFactorySetup &rArr; Para_WriteSettingToFile &rArr; f_open &rArr; follow_path &rArr; dir_find &rArr; dir_next &rArr; create_chain &rArr; put_fat &rArr; move_window &rArr; sync_window &rArr; disk_write &rArr; Flash_SectorsWrite &rArr; Flash_PageWrite &rArr; Flash_WaitForEnd &rArr; Flash_SendByte &rArr; SPI_I2S_SendData
 </UL>
 <BR>[Calls]<UL><LI><a href="#[dc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Feed_Rc_Dog
@@ -933,7 +933,7 @@ Global Symbols
 <LI><a href="#[e8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;usbd_hid_set_report
 </UL>
 
-<P><STRONG><a name="[de]"></a>ANO_DT_Send_Senser3</STRONG> (Thumb, 448 bytes, Stack size 40 bytes, data_transfer.o(.text), UNUSED)
+<P><STRONG><a name="[de]"></a>ANO_DT_Send_Senser3</STRONG> (Thumb, 440 bytes, Stack size 40 bytes, data_transfer.o(.text), UNUSED)
 <BR><BR>[Calls]<UL><LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ANO_DT_Send_Data
 </UL>
 

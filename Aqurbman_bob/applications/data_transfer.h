@@ -32,6 +32,9 @@ extern s16 d0,d1,d2,d3,d4,
 					 d5,d6,d7,d8,d9,
 					 d10,d11,d12,d13,d14,
 					 d15,d16,d17,d18,d19;
+
+extern s32 deepth_send;
+extern s16 temperature_send,humidity_send;
 		
 
 void ANO_DT_Data_Exchange(void);

@@ -98,8 +98,8 @@ void Duty_5ms()
 	deepth_adc=Get_Adc(2);
 	deepth=((deepth_adc*V_REF/4096.0f)-0.5f)*100000.0f/4.0f;    //计算深度值
 //	d5=Get_Adc(2);
-	d5=deepth;
-	d5=Moving_Median(2,9,d5);
+	deepth_send=deepth;
+	deepth_send=Moving_Median(2,9,d5);
 //		d5+= ( 1 / ( 1 + 1 / ( 0.2f *3.14f *5 ) ) ) *(0 - d5);	
 }
 
@@ -135,8 +135,8 @@ void Duty_200ms()
 	d6=DHT11_Read_Data(&temperature,&humidity);
 	if(!d6)
 	{
-		d7=temperature;   //d7=temperature+1;
-		d8=humidity;
+		temperature_send=temperature;   //d7=temperature+1;
+		humidity_send=humidity;
 	}
 //	d5=Get_Adc(2);	
 }

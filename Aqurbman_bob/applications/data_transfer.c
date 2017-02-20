@@ -25,6 +25,9 @@ s16 d0,d1,d2,d3,d4,
 		d10,d11,d12,d13,d14,
 		d15,d16,d17,d18,d19;
 		
+s32 deepth_send;
+s16 temperature_send,humidity_send;
+		
 /////////////////////////////////////////////////////////////////////////////////////
 //数据拆分宏定义，在发送大于1字节的数据类型时，比如int16、float等，需要把数据拆分成单独字节进行发送
 #define BYTE0(dwTemp)       ( *( (char *)(&dwTemp)		) )
@@ -127,7 +130,7 @@ void ANO_DT_Data_Exchange(void)
 	else if(f.send_senser2)
 	{
 		f.send_senser2 = 0;
-		ANO_DT_Send_Senser2(d5,d7,d8);
+		ANO_DT_Send_Senser2(deepth_send,temperature_send,humidity_send);
 //		ANO_DT_Send_Senser3(mpu6050.Acc.x,mpu6050.Acc.y,mpu6050.Acc.z,
 //												mpu6050.Gyro.x,mpu6050.Gyro.y,mpu6050.Gyro.z,
 //												ak8975.Mag_Val.x,ak8975.Mag_Val.y,ak8975.Mag_Val.z);
