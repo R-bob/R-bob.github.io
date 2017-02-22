@@ -677,21 +677,32 @@ void ANO_DT_Send_Senser2(s32 deepth,s16	temperature,s16 humidity)
 {
 	u8 _cnt=0;
 	
+	vs32 _temp;
+	vs16 _temp1;
+	
+	deepth=8;
+	temperature=5;
+	humidity=2;
+	
 	data_to_send[_cnt++]=0xAA;
 	data_to_send[_cnt++]=0xAA;
 	data_to_send[_cnt++]=0x07;
 	data_to_send[_cnt++]=0;
 	
-	data_to_send[_cnt++]=BYTE3(deepth);
-	data_to_send[_cnt++]=BYTE2(deepth);
-	data_to_send[_cnt++]=BYTE1(deepth);
-	data_to_send[_cnt++]=BYTE0(deepth);
+	_temp = deepth;
+	data_to_send[_cnt++]=BYTE3(_temp);
+	data_to_send[_cnt++]=BYTE2(_temp);
+	data_to_send[_cnt++]=BYTE1(_temp);
+	data_to_send[_cnt++]=BYTE0(_temp);
 
-	data_to_send[_cnt++]=BYTE1(temperature);
-	data_to_send[_cnt++]=BYTE0(temperature);
 	
-	data_to_send[_cnt++]=BYTE1(humidity);
-	data_to_send[_cnt++]=BYTE0(humidity);
+	_temp1 = temperature;
+	data_to_send[_cnt++]=BYTE1(_temp1);
+	data_to_send[_cnt++]=BYTE0(_temp1);
+	
+		_temp1 = humidity;
+	data_to_send[_cnt++]=BYTE1(_temp1);
+	data_to_send[_cnt++]=BYTE0(_temp1);
 	
 	data_to_send[3] = _cnt-4;
 	
